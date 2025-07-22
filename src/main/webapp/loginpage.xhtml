@@ -218,7 +218,7 @@
                                 <h3>#{bundle['auth.providers.title']}</h3>
                                 <h:form>
                                     <ui:repeat value="#{LoginPage.listAuthenticationProviders()}" var="provider">
-                                        <p:commandLink rendered="#{provider.id != LoginPage.authProvider.id}" styleClass="btn btn-default" actionListener="#{LoginPage.setAuthProviderById(provider.id)}" update="login-container">
+                                        <p:commandLink rendered="#{provider.id != LoginPage.authProvider.id and provider.id != 'oidc-mpconfig'}" styleClass="btn btn-default" actionListener="#{LoginPage.setAuthProviderById(provider.id)}" update="login-container">
                                             <h:outputText value="#{provider.title}" />
                                         </p:commandLink>
                                     </ui:repeat>
